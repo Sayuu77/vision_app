@@ -149,7 +149,6 @@ else:
 if uploaded_file:
     st.markdown("Vista Previa")
     with st.container():
-        st.markdown('<div class="image-preview">', unsafe_allow_html=True)
         st.image(uploaded_file, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
