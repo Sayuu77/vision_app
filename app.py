@@ -213,8 +213,7 @@ if uploaded_file is not None and ke and analyze_button:
             
             # Mostrar tarjeta de respuesta
             with st.container():
-                st.markdown('<div class="response-card">', unsafe_allow_html=True)
-                st.markdown("### 🤖 Análisis de la Imagen")
+                st.markdown("### Análisis de la Imagen")
                 
                 for completion in client.chat.completions.create(
                     model="gpt-4o", 
