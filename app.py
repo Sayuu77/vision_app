@@ -150,10 +150,8 @@ if uploaded_file:
     st.markdown("Vista Previa")
     with st.container():
         st.image(uploaded_file, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
 
 # Sección de preguntas específicas
-st.markdown('<div class="toggle-container">', unsafe_allow_html=True)
 show_details = st.toggle(
     "Hacer una pregunta específica sobre la imagen",
     value=False,
