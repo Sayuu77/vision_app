@@ -130,7 +130,7 @@ else:
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Sección de carga de imagen
-st.markdown("### 🖼️ Carga tu Imagen")
+st.markdown("Carga tu Imagen")
 uploaded_file = st.file_uploader(
     "Arrastra y suelta tu imagen aquí",
     type=["jpg", "png", "jpeg", "webp"],
@@ -160,7 +160,7 @@ show_details = st.toggle(
 
 if show_details:
     additional_details = st.text_area(
-        "💭 ¿Qué te gustaría saber sobre la imagen?",
+        "¿Qué te gustaría saber sobre la imagen?",
         placeholder="Ej: ¿Qué emociones transmite esta imagen? ¿Qué objetos reconoces? Describe los colores y composición...",
         height=100,
         disabled=not show_details
@@ -169,7 +169,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # Botón de análisis
 analyze_button = st.button(
-    "🚀 Analizar Imagen con IA", 
+    "Analizar Imagen con IA", 
     type="primary",
     use_container_width=True,
     disabled=not (uploaded_file and ke)
