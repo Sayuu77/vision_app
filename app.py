@@ -106,21 +106,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Título principal
-st.markdown('<div class="main-title">🤖 Vision AI</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Analizador Inteligente de Imágenes con GPT-4 Vision</div>', unsafe_allow_html=True)
-
-# Badges de características
-col_badges = st.columns(5)
-with col_badges[0]:
-    st.markdown('<div class="feature-badge">🔍 Análisis</div>', unsafe_allow_html=True)
-with col_badges[1]:
-    st.markdown('<div class="feature-badge">📝 Descripción</div>', unsafe_allow_html=True)
-with col_badges[2]:
-    st.markdown('<div class="feature-badge">🎯 Detalles</div>', unsafe_allow_html=True)
-with col_badges[3]:
-    st.markdown('<div class="feature-badge">🤖 IA</div>', unsafe_allow_html=True)
-with col_badges[4]:
-    st.markdown('<div class="feature-badge">🚀 Rápido</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🤖 Vision App</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Analizador Inteligente de Imágenes</div>', unsafe_allow_html=True)
 
 # Función para codificar imagen a base64
 def encode_image(image_file):
@@ -128,7 +115,6 @@ def encode_image(image_file):
 
 # Sección de API Key
 st.markdown("### 🔑 Configuración de API")
-st.markdown('<div class="api-input">', unsafe_allow_html=True)
 ke = st.text_input(
     'Ingresa tu Clave de OpenAI',
     type="password",
@@ -145,7 +131,6 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # Sección de carga de imagen
 st.markdown("### 🖼️ Carga tu Imagen")
-st.markdown('<div class="upload-card">', unsafe_allow_html=True)
 uploaded_file = st.file_uploader(
     "Arrastra y suelta tu imagen aquí",
     type=["jpg", "png", "jpeg", "webp"],
@@ -160,11 +145,9 @@ if uploaded_file:
     st.caption(f"📏 Tamaño: {file_size:.1f} KB | 🎯 Formato: {uploaded_file.type.split('/')[-1].upper()}")
 else:
     st.info("📁 Selecciona una imagen para analizar")
-st.markdown('</div>', unsafe_allow_html=True)
-
 # Mostrar previsualización de la imagen
 if uploaded_file:
-    st.markdown("### 👀 Vista Previa")
+    st.markdown("Vista Previa")
     with st.container():
         st.markdown('<div class="image-preview">', unsafe_allow_html=True)
         st.image(uploaded_file, use_container_width=True)
@@ -173,7 +156,7 @@ if uploaded_file:
 # Sección de preguntas específicas
 st.markdown('<div class="toggle-container">', unsafe_allow_html=True)
 show_details = st.toggle(
-    "🎯 Hacer una pregunta específica sobre la imagen",
+    "Hacer una pregunta específica sobre la imagen",
     value=False,
     help="Activa esto para hacer preguntas detalladas sobre la imagen"
 )
@@ -197,7 +180,7 @@ analyze_button = st.button(
 
 # Procesar análisis
 if uploaded_file is not None and ke and analyze_button:
-    with st.spinner("🔍 Analizando imagen con IA..."):
+    with st.spinner("Analizando imagen con IA..."):
         try:
             # Codificar la imagen
             base64_image = encode_image(uploaded_file)
