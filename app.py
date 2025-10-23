@@ -130,7 +130,7 @@ else:
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Sección de carga de imagen
-st.markdown("## Carga tu Imagen")
+st.markdown("# Carga tu Imagen")
 uploaded_file = st.file_uploader(
     "Arrastra y suelta tu imagen aquí",
     type=["jpg", "png", "jpeg", "webp"],
